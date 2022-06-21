@@ -1,0 +1,662 @@
+body, html {
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin: 0px;
+    padding: 0px;
+    color:rgba(0, 0, 0, 0.7);
+    }
+
+    * {
+        box-sizing: border-box;
+        padding: 0px;
+        margin: 0px;
+        list-style-type: none;
+        scroll-behavior: smooth;
+    }
+
+    * a {
+        text-decoration: none;
+        color:rgba(0, 0, 0, 0.7);
+    }
+
+    .modal-content {
+        visibility: visible;
+    }
+
+#validation {
+    visibility: hidden;
+    display: block;
+    z-index: 1000;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+width: 100%;
+top: 50%; 
+left: 50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  font-size: 20px;
+}
+
+    :active, :focus {
+        border: none;
+        outline: none;
+        -moz-outline-style: none;
+        box-shadow: none;
+        }
+
+    .page-content {
+        width: 64%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    header {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer {
+        font-weight: bold;
+        font-size: 18px;
+        color:#fe142f;
+        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+
+    .modal {
+        display: none;
+    }
+
+    .modal-visible {
+        display: block;
+        animation: anim 1.5s forwards;
+    }
+
+    @keyframes anim {
+        from {
+            opacity: 0;
+            top: 0%;
+        }
+
+        to {
+            opacity: 100%;
+            top: 35%;
+        }
+        
+    }
+
+
+    input {
+    border: 1px solid #8f8f8f;
+    }
+
+    input:focus {
+    border: 1px solid #5ef9a4;
+    }
+
+    .error input {
+    color: #cd525e;
+    border: 1px solid #cd525e;
+    }
+
+    .error span {
+    visibility: visible;
+    opacity: 1;
+    color: #cd525e;
+    }
+
+    #submit {
+        background-color: #fe142f;
+        border-radius: 8px;
+        color: #ffffff;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        padding-left: 24px;
+        padding-right: 24px;
+        border: 0px;
+        cursor: pointer;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .empty {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+
+    .envoyer {
+        text-align: center;
+        margin-top: 0px;
+    }
+
+    .desktop li {
+        display: inline-block;
+    }
+
+    .desktop li a {
+        padding-bottom: 12px;
+        padding-top: 12px;
+        padding-left: 12px;
+        padding-right: 12px;
+        display: inline-block;
+        font-size: 20px;
+        font-weight: 100;
+        font-family: 'Roboto', sans-serif;
+        cursor: pointer;
+    }
+
+    .desktop li:hover {
+        background-color: #fe142f;
+        border-radius: 14px;
+    }
+
+    .desktop li:hover a {
+        color: #ffffff;
+    }
+
+    .desktop li a.active {
+        background-color: #fe142f;
+        border-radius: 14px;
+        color: #ffffff;
+    }
+
+    .inscription-marathon {
+        width: 100%;
+        min-height: 600px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        color: #ffffff;
+        display: flex;
+        justify-content: start;
+        position: relative;
+        background-color: #232323;
+        margin-top: 80px;
+    }
+
+    .texte {
+        padding: 60px;
+        position: absolute;
+        width: 40%;
+        z-index: 800;
+        min-height: 600px;
+        White-space: nowrap;
+    }
+
+    .texte span {
+        display: inline-block;
+        margin-top: 60px;
+        font-size: 22px;
+        white-space: normal;
+        width: 400px;
+    }
+
+    .image {
+        position: absolute;
+        right: 0px;
+        z-index: 1;
+    }
+
+    .image img {
+        width: 100%;
+        object-fit: cover;
+        height: 600px;
+        margin: 0px;
+        padding: 0px;
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    .inscription-marathon h1 {
+        font-size: 80px;
+        font-weight: 400;
+    }
+
+    .inscription-marathon button, .fermer {
+        display: block;
+        margin-top: 60px;
+        padding: 16px;
+        background-color: #fe142f;
+        border: 0px;
+        font-family: "DM Sans", Arial, Helvetica, sans-serif;
+        font-size: 22px;
+        color: #ffffff;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .inscription-marathon button:hover, .fermer:hover {
+        background-color: #3876ac;
+    }
+
+    .fermer {
+        display: inline-block;
+        margin-top: 30px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 30px;
+        padding-right: 30px;
+        background-color: #fe142f;
+        border: 0px;
+        font-family: "DM Sans", Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        color: #ffffff;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+
+    #close {
+    display: inline-block;
+    right: 24px;
+    top: 12px;
+    position: absolute;
+    font-size: 16px;
+    cursor: pointer;
+    }
+
+    .modal-container {
+        display: none;
+    }
+
+    .modal-container-visible {
+        display: block;
+        min-height: 100vh;
+        min-width: 100vw;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 3000;
+        background-color: rgb(56, 118, 172, 0.6);
+        overflow: hidden;
+    }
+
+    .modal-container-hidden {
+        display: none;
+    }
+
+    form {
+        position: fixed;
+        border-radius: 10px;
+        display: block;
+        color: #e3e3e3;
+        width: 380px;
+        line-height: 1.8;
+        background-color: #232323;
+        padding: 24px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        background-size: cover;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+
+}
+
+form br {
+    display: none;
+}
+
+.prenom-container input, .nom-container input, .email-container input, .date-container input, .tournois-container input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 6px;
+    margin-bottom: 4px;
+}
+
+.prenom-container label, .nom-container label, .email-container label, .date-container label, .tournois-container label {
+    display: block;
+}
+
+form span {
+    display: block;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+.menu-mobile-visible {
+    display: inline-block;
+}
+
+.icon-menu {
+    display: none;
+}
+
+ul {
+    display: inline-block;
+}
+
+ button.icon-menu {
+    background-color: #ffffff;
+    border: 0px;
+    font-size: 20px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+ button:hover.icon-menu {
+    background-color: #fe142f;
+    border-radius: 14px;
+    color: #ffffff;
+}
+
+.menu-mobile {
+    text-align: right;
+    width: 100%;
+    z-index: 1;
+    visibility: hidden;
+    height: 0px;
+}
+
+.menu-mobile nav {
+    display: flex;
+    justify-content: right;
+    text-align: left;
+}
+
+.menu-mobile li {
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 20px;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+form span {
+    color: #cd525e;;
+    font-style: italic;
+}
+
+
+.menu-mobile li:hover {
+    background-color: #fe142f;
+    border-radius: 14px;
+}
+
+.menu-mobile li:hover a {
+    color: #ffffff;
+}
+
+.menu-mobile li.active {
+    background-color: #fe142f;
+    border-radius: 14px;
+    color: #ffffff;
+}
+
+.menu-mobile li.active a {
+    color: #ffffff;
+}
+
+.inscription-mobile {
+    display: none;
+}
+
+button.inscription-mobile {
+    display: none;
+}
+
+
+
+.checkbox-label,
+.checkbox2-label {
+  position: relative;
+  margin-left: 36px;
+  font-size: 12px;
+  font-weight: normal;
+}
+.checkbox-label .checkbox-icon,
+.checkbox2-label .checkbox-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #279e7a;
+  border-radius: 50%;
+  text-indent: 29px;
+  white-space: nowrap;
+  position: absolute;
+  left: -30px;
+  top: -1px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.checkbox-label .checkbox-icon::after,
+.checkbox2-label .checkbox-icon::after {
+  content: "";
+  width: 13px;
+  height: 13px;
+  background-color: #279e7a;
+  border-radius: 50%;
+  text-indent: 29px;
+  white-space: nowrap;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+  opacity: 0;
+}
+.checkbox-input {
+  display: none;
+}
+.checkbox-input:checked + .checkbox-label .checkbox-icon::after,
+.checkbox-input:checked + .checkbox2-label .checkbox-icon::after {
+  opacity: 1;
+}
+.checkbox-input:checked + .checkbox2-label .checkbox-icon {
+  background: #279e7a;
+}
+.checkbox2-label .checkbox-icon {
+  border-radius: 4px;
+  border: 0;
+  background: #c4c4c4;
+}
+.checkbox2-label .checkbox-icon::after {
+  width: 7px;
+  height: 4px;
+  border-radius: 2px;
+  background: transparent;
+  border: 2px solid transparent;
+  border-bottom-color: #fff;
+  border-left-color: #fff;
+  transform: rotate(-55deg);
+  left: 21%;
+  top: 19%;
+}
+
+.conditions-container {
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.lieux-container {
+    line-height: 3;
+}
+  
+.lieux-container p {
+    margin-left: 10px;
+}
+
+
+
+
+@media screen and (min-width: 750px) and (max-width: 1359px) { 
+
+    .page-content {
+        width: 80%;
+    }
+
+
+    .icon-menu {
+        display: none;
+    }
+
+    header {
+        display: block;
+    }
+
+    .logo {
+        display: block;
+    }
+
+    nav.desktop {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .menu-mobile {
+        visibility: hidden;
+        height: 0px;
+    }
+
+    .inscription-marathon {
+        width: 100%;
+        min-height: 600px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        color: #ffffff;
+        display: flex;
+        justify-content: start;
+        position: relative;
+        background-color: #232323;
+        margin-top: 80px;
+    }
+
+    .texte {
+        padding: 60px;
+        position: initial;
+        width: 100%;
+        z-index: 800;
+        min-height: 600px;
+        overflow: hidden;
+        }
+
+    .texte span {
+        display: inline-block;
+        margin-top: 60px;
+        font-size: 22px;
+        white-space: normal;
+    }
+
+    .image {
+        position: absolute;
+        height: 100%;
+        right: 0px;
+        z-index: 1;
+    }
+
+    .image img {
+        height: 100%;
+        object-fit: cover;
+        height: 600px;
+        margin: 0px;
+        padding: 0px;
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    button.inscription-mobile {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 1px) and (max-width: 750px) { 
+
+    .page-content {
+        width: 80%;
+    }
+
+    
+    .icon-menu {
+        display: block;
+        margin-top: 18px;
+    }
+
+    .desktop-links {
+        display: none;
+    }
+
+    .menu-mobile {
+        visibility: visible;
+        height: 100%;
+    }
+
+
+    .inscription-marathon {
+        width: 100%;
+        min-height: auto;
+        border-radius: 10px;
+        display: block;
+        position: initial;
+        background-color: #ffffff;
+        margin-top: 50px;
+        box-shadow: rgba(0, 0, 0, 0.0) 0px 0px 0px;
+        color: #232323;
+    }
+
+    .texte {
+        padding: 0px;
+        position: initial;
+        width: 100%;
+        display: block;
+        z-index: 800;
+        min-height: auto;
+        white-space: normal;
+    }
+
+    .texte span {
+        display: inline-block;
+        margin-top: 60px;
+        font-size: 22px;
+        width: 100%;
+    }
+
+    .image {
+        position: initial;
+        right: 0px;
+        z-index: 1;
+        margin-top: 40px;
+    }
+
+    .image img {
+        width: 100%;
+        object-fit: fill;
+        height: auto;
+        margin: 0px;
+        padding: 0px;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    button.inscription-desktop {
+        display: none;
+    }
+
+
+    button.inscription-mobile {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .button-mobile {
+        text-align: center;
+    }
+
+}

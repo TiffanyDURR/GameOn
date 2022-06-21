@@ -64,6 +64,88 @@
 </div>
   </div>
 
+  <div class="modal-container">
+    <form class="modal">
+        <div id="close"><i class="fas fa-times"></i></div>
+        <div id="validation">
+          <div class="validation-titre">
+            Merci pour<br>
+            votre inscription !</div>
+          <span class="fermer">
+            Fermer
+          </span>
+        </div>
+        <div id="modal-content">
+  <div class="prenom-container">
+    <label for="prenom">Prénom</label>
+    <input  type="text" id="prenom" autocomplete="off">
+    <span class="error"></span>
+  </div>
+
+  <div class="nom-container">
+    <label for="nom">Nom</label>
+    <input  type="text" id="nom" autocomplete="off">
+    <span class="error"></span>
+  </div>
+
+  <div class="email-container">
+    <label for="email">E-mail</label>
+    <input  type="text" id="email" autocomplete="off">
+    <span class="error"></span>
+  </div>
+
+  <div class="date-container">
+    <label for="date">Date de naissance</label>
+    <input  type="date" id="date" autocomplete="off">
+    <span class="error"></span>
+  </div>
+
+  <div class="tournois-container">
+    <label for="tournois">A combien de tournois GameOn avez-vous déjà participé ?</label>
+    <input  type="text" id="tournois" autocomplete="off">
+    <span class="error"></span>
+  </div> 
+
+
+
+  <div class="lieux-container">
+    <p>A quel tournois souhaitez-vous participer ?</p>
+    <input class="checkbox-input" type="radio" id="lieu1" name="lieu" value="New York" checked >
+    <label class="checkbox-label" for="lieu1"><span class="checkbox-icon"></span>New York</label>
+    <input  class="checkbox-input" type="radio" id="lieu2" name="lieu" value="San Francisco" >
+    <label class="checkbox-label" for="lieu2"><span class="checkbox-icon"></span>San Francisco</label>
+    <input  class="checkbox-input" type="radio" id="lieu3" name="lieu" value="Seattle" >
+    <label class="checkbox-label" for="lieu3"><span class="checkbox-icon"></span>Seattle</label>
+    <div></div>
+    <input  class="checkbox-input" type="radio" id="lieu4" name="lieu" value="Chicago">
+    <label class="checkbox-label" for="lieu4"><span class="checkbox-icon"></span>Chicago</label>
+    <input  class="checkbox-input" type="radio" id="lieu5" name="lieu" value="Boston" >
+    <label class="checkbox-label" for="lieu5"><span class="checkbox-icon"></span>Boston</label>
+    <input  class="checkbox-input" type="radio" id="lieu6" name="lieu" value="Portland" >
+    <label class="checkbox-label" for="lieu6"><span class="checkbox-icon"></span>Portland</label>
+    <span class="error"></span>
+    </div>
+
+  <div class="conditions-container">
+    <input class="checkbox-input" type="checkbox" id="conditions">
+    <label class="checkbox2-label" for="conditions"><span class="checkbox-icon"></span>J'ai lu et accepté les conditions d'utilisation.</label>
+    <span class="error"></span>
+  </div>
+
+  <div class="eventz-container">
+    <input class="checkbox-input" type="checkbox" id="event" name="eventz">
+    <label class="checkbox2-label" for="event"><span class="checkbox-icon"></span>Je souhaite être prévenu des prochains évènements.</label>
+    <span class="error"></span>
+  </div>
+
+  <span class="empty"></span>
+  <div class="envoyer">
+  <input type="submit" value="C'est parti" id="submit">
+</div>
+</div>
+
+      </form>
+    </div>
       <footer>
         Copyright 2014 - 2022, GameOn Inc.
       </footer>
